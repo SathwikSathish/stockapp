@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        #result {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Stock Data Fetcher</h1>
+    <p>Enter a stock symbol to get the latest data:</p>
+
+    <input type="text" id="symbol" placeholder="Enter stock symbol (e.g., AAPL)" />
+    <button onclick="fetchStockData()">Get Stock Data</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function fetchStockData() {
+        const symbol = document.getElementById('symbol').value;
+        const resultDiv = document.getElementById('result');
+
+        // Fetch stock data from Flask backend
+        fetch(`/get-stock?symbol=${symbol}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                resultDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+            } else {
+                resultDiv.innerHTML = `
+                    <p><strong>Symbol:</strong> ${data.symbol}</p>
+                    <p><strong>Price:</strong> $${data.price}</p>
+                    <p><strong>Volume:</strong> ${data.volume}</p>
+                    <p><strong>Date:</strong> ${data.date}</p>
+                `;
+            }
+        })
+        .catch(error => {
+            resultDiv.innerHTML = `<p>An error occurred: ${error.message}</p>`;
+        });
+    }
+</script>
+
+</body>
+</html>
