@@ -7,8 +7,19 @@ Easy-to-use form-based front-end.
 Uses the Stock Data API to retrieve the most recent stock information.
 Project Structure
 
-├── Dockerfile          # Docker setup to containerize the app
-├── index.html          # Front-end HTML file to input stock symbol
-├── requirements.txt    # Project dependencies (Flask and requests)
-├── stock.py            # Main Flask application code
-└── README.md           # This README file
+Technologies Used
+-Python (Flask framework)
+-HTML (Front-end form)
+-Requests (Python library for handling API requests)
+-Docker (For containerizing the application)
+
+Getting Started
+Prerequisites
+To run this project locally, ensure you have the following installed:
+
+-Python 3.9+
+-Docker (if you want to run the app in a container)
+
+#### Local Setup (Without Docker)
+Clone the repository:
+
