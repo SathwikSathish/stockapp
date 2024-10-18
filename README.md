@@ -1,47 +1,56 @@
-# Stock Data Fetching Flask App
+# Flask Stock Data App
+A simple Flask application that fetches stock data from a third-party API. The app allows you to retrieve stock information based on a given stock symbol.
 
-This is a Flask-based web application that fetches stock data using the Stock Data API. It allows users to input a stock symbol and retrieve the latest stock information. The application is containerized using Docker for easy deployment.
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
 ## Features
-- Fetch real-time stock data by providing a stock symbol.
-- User-friendly front-end interface built with HTML and CSS.
-- Flask backend for API integration.
-- Dockerized application for ease of deployment.
 
-## Requirements
-
-To run this project locally, you will need the following installed:
-- Python 3.x
-- Flask
-- Docker
+- Fetches stock data for various symbols.
+- Returns details like current price, day change, volume, and more.
+- Easy to use REST API interface.
 
 ## Installation
 
-### 1. Clone the repository
+To get started, you need to clone this repository and install the required packages.
 
-```bash
-git clone https://github.com/SathwikSathish/stockapp
-# This clones the project from the GitHub repository.
+### Prerequisites
 
-cd stockapp
-# Changes the current directory to the project directory.
+- Python 3.9 or later
+- pip (Python package manager)
 
-pip install -r requirements.txt
-# Installs the required Python packages listed in requirements.txt.
+### Steps
 
-python stock.py
-# Starts the Flask server locally. The app will be available at http://127.0.0.1:5000.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/flask-stock-api.git
+   cd flask-stock-api
+2. Create a virtual environment (optional but recommended): python -m venv venv
+source venv/bin/activate  # On Windows use venv\Scripts\activate
 
-- BUILDING WITH DOCKER
+4. Install the required packages: pip install -r requirements.txt
 
-docker build -t stockdata-app .
-# Builds a Docker image with the tag 'stockdata-app' using the Dockerfile in the current directory.
+### Usage
+Running Locally
+1.Set your API token in the stockdata.py file:
+   API_TOKEN = "your_api_token_here"
+2.Start the Flask application:
+   python stockdata.py
+3.Open your browser and navigate to:
+   http://localhost:5000/get-stock
 
-docker run -d -p 5000:5000 stockdata-app
-# Runs the container in detached mode (-d), mapping port 5000 of the container to port 5000 of the host.
+### Contributing
+Contributions are welcome! Please follow these steps:
 
-http://localhost:5000
-#accessing the application
+1.Fork the repository.
+2.Create a new branch (git checkout -b feature/YourFeature).
+3.Make your changes and commit (git commit -m 'Add some feature').
+4.Push to the branch (git push origin feature/YourFeature).
+5.Create a new Pull Request.
 
 
 
