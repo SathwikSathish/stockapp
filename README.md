@@ -1,25 +1,54 @@
-## Stock Data Fetching Flask App
-This project is a simple Flask application that fetches stock data for a specified stock symbol using the Stock Data API. The app provides a front-end form to input stock symbols and displays the relevant stock information fetched from an API.
+# Stock Data Fetching Flask App
 
-Features
-Fetch real-time stock data for a specified symbol.
-Easy-to-use form-based front-end.
-Uses the Stock Data API to retrieve the most recent stock information.
-Project Structure
+This is a Flask-based web application that fetches stock data using the Stock Data API. It allows users to input a stock symbol and retrieve the latest stock information. The application is containerized using Docker for easy deployment.
 
-Technologies Used
--Python (Flask framework)
--HTML (Front-end form)
--Requests (Python library for handling API requests)
--Docker (For containerizing the application)
+## Features
+- Fetch real-time stock data by providing a stock symbol.
+- User-friendly front-end interface built with HTML and CSS.
+- Flask backend for API integration.
+- Dockerized application for ease of deployment.
 
-Getting Started
-Prerequisites
-To run this project locally, ensure you have the following installed:
+## Requirements
 
--Python 3.9+
--Docker (if you want to run the app in a container)
+To run this project locally, you will need the following installed:
+- Python 3.x
+- Flask
+- Docker
 
-#### Local Setup (Without Docker)
-Clone the repository:
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/SathwikSathish/stockapp
+# This clones the project from the GitHub repository.
+
+cd stockapp
+# Changes the current directory to the project directory.
+
+pip install -r requirements.txt
+# Installs the required Python packages listed in requirements.txt.
+
+python stock.py
+# Starts the Flask server locally. The app will be available at http://127.0.0.1:5000.
+
+- BUILDING WITH DOCKER
+
+docker build -t stockdata-app .
+# Builds a Docker image with the tag 'stockdata-app' using the Dockerfile in the current directory.
+
+docker run -d -p 5000:5000 stockdata-app
+# Runs the container in detached mode (-d), mapping port 5000 of the container to port 5000 of the host.
+
+http://localhost:5000
+#accessing the application
+
+
+
+
+
+
+
+
+
 
